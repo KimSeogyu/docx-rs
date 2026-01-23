@@ -22,7 +22,7 @@ pub struct Numbering<'a> {
     pub abstract_numberings: Vec<AbstractNum<'a>>,
     #[xml(child = "w:num")]
     /// Numberings are used by your document and refer to abstract numberings for layout.
-    pub numberings: Vec<Num>,
+    pub numberings: Vec<Num<'a>>,
 }
 
 #[derive(Debug, Default, XmlRead, XmlWrite, Clone)]
@@ -120,23 +120,25 @@ pub struct LevelJustification {
 #[derive(Debug, Default, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:num")]
-pub struct Num {
+pub struct Num<'a> {
     #[xml(attr = "w:numId")]
     pub num_id: Option<isize>,
     #[xml(child = "w:abstractNumId")]
     pub abstract_num_id: Option<AbstractNumId>,
     #[xml(child = "w:lvlOverride")]
-    pub level_overrides: Vec<LevelOverride>,
+    pub level_overrides: Vec<LevelOverride<'a>>,
 }
 
 #[derive(Debug, Default, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "w:lvlOverride")]
-pub struct LevelOverride {
+pub struct LevelOverride<'a> {
     #[xml(attr = "w:ilvl")]
     pub i_level: Option<isize>,
     #[xml(child = "w:startOverride")]
     pub start_override: Option<StartOverride>,
+    #[xml(child = "w:lvl")]
+    pub level: Option<Level<'a>>,
 }
 
 #[derive(Debug, Default, XmlRead, XmlWrite, Clone)]
@@ -176,6 +178,7 @@ impl<'a> Numbering<'a> {
                             let LevelOverride {
                                 i_level,
                                 start_override,
+                                level: _,
                             } = o;
                             if i_level.is_some() && start_override.is_some() {
                                 if let Some(level) =
@@ -400,4 +403,34 @@ fn xml_writing() {
             " "
         )
     );
+}
+#[test]
+fn lvl_override_parsing() {
+    let xml = r#"
+        <w:numbering xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+            <w:num w:numId="2">
+                <w:abstractNumId w:val="1"/>
+                <w:lvlOverride w:ilvl="0">
+                    <w:startOverride w:val="10"/>
+                    <w:lvl w:ilvl="0">
+                        <w:numFmt w:val="upperLetter"/>
+                        <w:lvlText w:val="%1."/>
+                    </w:lvl>
+                </w:lvlOverride>
+            </w:num>
+        </w:numbering>
+    "#;
+    let numbering = Numbering::from_str(xml).unwrap();
+    let num = &numbering.numberings[0];
+    let override_def = &num.level_overrides[0];
+
+    assert_eq!(override_def.i_level, Some(0));
+    assert_eq!(
+        override_def.start_override.as_ref().unwrap().value,
+        Some(10)
+    );
+
+    let level = override_def.level.as_ref().unwrap();
+    assert_eq!(level.i_level, Some(0));
+    assert_eq!(level.number_format.as_ref().unwrap().value, "upperLetter");
 }
