@@ -160,7 +160,7 @@ impl<'a> Numbering<'a> {
     /// This helper function takes an numbering id that is provided in a paragraph, looks up
     /// the details in the numbering section and merges it with the abstract numbering to get
     /// a complete AbstractNum object.
-    pub fn numbering_details(&self, id: isize) -> Option<AbstractNum> {
+    pub fn numbering_details(&self, id: isize) -> Option<AbstractNum<'_>> {
         self.numberings.iter().find_map(|n| {
             if n.num_id != Some(id) || n.abstract_num_id.is_none() {
                 None
@@ -182,7 +182,7 @@ impl<'a> Numbering<'a> {
                                     an.levels.iter_mut().find(|level| level.i_level == *i_level)
                                 {
                                     level.start = Some(LevelStart {
-                                        value: start_override.as_ref().unwrap().value.clone(),
+                                        value: start_override.as_ref().unwrap().value,
                                     });
                                 }
                             }

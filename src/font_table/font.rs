@@ -9,7 +9,7 @@ use crate::{
 /// Font
 ///
 /// ```rust
-/// use docx_rust::font_table::*;
+/// use rs_docx::font_table::*;
 ///
 /// let font = Font::new("Arial")
 ///     .charset("00")

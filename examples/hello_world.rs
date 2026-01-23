@@ -1,4 +1,4 @@
-use docx_rust::{
+use rs_docx::{
     document::{Paragraph, Run, TextSpace},
     formatting::{CharacterProperty, JustificationVal, ParagraphProperty},
     styles::{DefaultStyle, Style, StyleType},

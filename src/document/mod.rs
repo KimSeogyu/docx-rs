@@ -1,3 +1,4 @@
+#![allow(clippy::module_inception)]
 mod bidir;
 mod body;
 mod bookmark_end;

@@ -5,7 +5,7 @@ use crate::__xml_test_suites;
 /// Bold
 ///
 /// ```rust
-/// use docx_rust::formatting::*;
+/// use rs_docx::formatting::*;
 ///
 /// let bold = Bold::from(false);
 /// let bold = Bold::from(true);

@@ -11,7 +11,7 @@ use super::{BoldComplex, Caps, Highlight, ItalicsComplex, Position, SmallCaps, V
 /// Character Property
 ///
 /// ```rust
-/// use docx_rust::formatting::{CharacterProperty, UnderlineStyle, HighlightType};
+/// use rs_docx::formatting::{CharacterProperty, UnderlineStyle, HighlightType};
 ///
 /// let prop = CharacterProperty::default()
 ///     .style_id("foo")

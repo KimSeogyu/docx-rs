@@ -9,7 +9,7 @@ use crate::formatting::{IndentLevel, NumberingId};
 /// Numbering Property
 ///
 /// ```rust
-/// use docx_rust::formatting::*;
+/// use rs_docx::formatting::*;
 ///
 /// let prop = NumberingProperty::from((20, 40));
 /// ```

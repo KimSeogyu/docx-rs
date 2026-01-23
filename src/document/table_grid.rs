@@ -6,7 +6,7 @@ use crate::document::GridColumn;
 /// Table Grid
 ///
 /// ```rust
-/// use docx_rust::document::*;
+/// use rs_docx::document::*;
 ///
 /// let grid = TableGrid::from(vec![42, 42]);
 ///

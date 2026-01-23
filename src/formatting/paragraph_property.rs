@@ -9,7 +9,7 @@ use crate::{
 /// Paragraph Property
 ///
 /// ```rust
-/// use docx_rust::formatting::{ParagraphProperty, JustificationVal};
+/// use rs_docx::formatting::{ParagraphProperty, JustificationVal};
 ///
 /// let prop = ParagraphProperty::default()
 ///     .style_id("foo")

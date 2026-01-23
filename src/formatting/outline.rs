@@ -5,7 +5,7 @@ use crate::__xml_test_suites;
 /// Outline
 ///
 /// ```rust
-/// use docx_rust::formatting::*;
+/// use rs_docx::formatting::*;
 ///
 /// let outline = Outline::from(false);
 /// let outline = Outline::from(true);

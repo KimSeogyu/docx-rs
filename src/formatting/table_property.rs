@@ -11,7 +11,7 @@ use super::table_margin::TableMargins;
 /// Table Property
 ///
 /// ```rust
-/// use docx_rust::formatting::*;
+/// use rs_docx::formatting::*;
 ///
 /// let prop = TableProperty::default()
 ///     .style_id("foo")

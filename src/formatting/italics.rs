@@ -5,7 +5,7 @@ use crate::__xml_test_suites;
 /// Italics
 ///
 /// ```rust
-/// use docx_rust::formatting::*;
+/// use rs_docx::formatting::*;
 ///
 /// let i = Italics::from(false);
 /// let i = Italics::from(true);

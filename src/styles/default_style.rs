@@ -11,8 +11,8 @@ use crate::{
 /// This style is inherited by every paragraph and run.
 ///
 /// ```rust
-/// use docx_rust::formatting::*;
-/// use docx_rust::styles::*;
+/// use rs_docx::formatting::*;
+/// use rs_docx::styles::*;
 ///
 /// let style = DefaultStyle::default()
 ///     .character(CharacterProperty::default())

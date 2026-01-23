@@ -1,6 +1,6 @@
-extern crate docx_rust;
+extern crate rs_docx;
 
-use docx_rust::{
+use rs_docx::{
     document::{BodyContent, ParagraphContent, RunContent},
     rels::TargetMode,
     DocxFile,

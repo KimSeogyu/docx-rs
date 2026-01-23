@@ -10,8 +10,8 @@ use crate::{__setter, __xml_test_suites, document::TableCell, formatting::TableR
 /// Table Row
 ///
 /// ```rust
-/// use docx_rust::document::*;
-/// use docx_rust::formatting::*;
+/// use rs_docx::document::*;
+/// use rs_docx::formatting::*;
 ///
 /// let row = TableRow::default()
 ///     .property(TableRowProperty::default())

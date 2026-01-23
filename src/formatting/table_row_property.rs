@@ -5,7 +5,7 @@ use crate::{__setter, __xml_test_suites, formatting::TableHeader, formatting::Ta
 /// Table Row Property
 ///
 /// ```rust
-/// use docx_rust::formatting::{TableRowProperty, TableJustificationVal};
+/// use rs_docx::formatting::{TableRowProperty, TableJustificationVal};
 ///
 /// let prop = TableRowProperty::default()
 ///     .justification(TableJustificationVal::Start);

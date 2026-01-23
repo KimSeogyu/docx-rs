@@ -5,7 +5,7 @@ use crate::__xml_test_suites;
 /// WidowControl
 ///
 /// ```rust
-/// use docx_rust::formatting::*;
+/// use rs_docx::formatting::*;
 ///
 /// let WidowControl = WidowControl::from(false);
 /// let WidowControl = WidowControl::from(true);

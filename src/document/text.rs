@@ -8,7 +8,7 @@ use crate::{__string_enum, __xml_test_suites};
 /// A literal text that shall be displayed in the document.
 ///
 /// ```rust
-/// use docx_rust::document::{Text, TextSpace};
+/// use rs_docx::document::{Text, TextSpace};
 ///
 /// let text = Text::from("text");
 /// let text = Text::from(String::from("text"));

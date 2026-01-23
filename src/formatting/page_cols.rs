@@ -3,7 +3,7 @@ use hard_xml::{XmlRead, XmlWrite};
 /// Numbering Id
 ///
 /// ```rust
-/// use docx_rust::formatting::*;
+/// use rs_docx::formatting::*;
 ///
 /// let id = NumberingId::from(42isize);
 /// ```

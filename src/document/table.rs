@@ -11,8 +11,8 @@ use crate::{
 /// Table
 ///
 /// ```rust
-/// use docx_rust::document::*;
-/// use docx_rust::formatting::*;
+/// use rs_docx::document::*;
+/// use rs_docx::formatting::*;
 ///
 /// let tbl = Table::default()
 ///     .property(TableProperty::default())

@@ -68,6 +68,6 @@ __xml_test_suites!(
     r#"<w:hyperlink r:id="id"/>"#,
     Hyperlink::default().anchor("anchor"),
     r#"<w:hyperlink w:anchor="anchor"/>"#,
-    Hyperlink::default().content(Run::default()),
+    Hyperlink::default().content(vec![Run::default()]),
     r#"<w:hyperlink><w:r/></w:hyperlink>"#,
 );

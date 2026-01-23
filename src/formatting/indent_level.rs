@@ -5,7 +5,7 @@ use crate::__xml_test_suites;
 /// Indent Level
 ///
 /// ```rust
-/// use docx_rust::formatting::*;
+/// use rs_docx::formatting::*;
 ///
 /// let lvl = IndentLevel::from(42isize);
 /// ```

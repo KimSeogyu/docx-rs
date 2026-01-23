@@ -9,8 +9,8 @@ use crate::{__setter, __xml_test_suites, document::Paragraph, formatting::TableC
 /// Table Cell
 ///
 /// ```rust
-/// use docx_rust::document::*;
-/// use docx_rust::formatting::*;
+/// use rs_docx::document::*;
+/// use rs_docx::formatting::*;
 ///
 /// let cell = TableCell::from(Paragraph::default());
 ///
@@ -38,21 +38,15 @@ impl<'a> TableCell<'a> {
     }
 
     pub fn iter_text(&self) -> impl Iterator<Item = &Cow<'a, str>> {
-        self.content
-            .iter()
-            .filter_map(|content| match content {
-                TableCellContent::Paragraph(p) => Some(p.iter_text()),
-            })
-            .flatten()
+        self.content.iter().flat_map(|content| match content {
+            TableCellContent::Paragraph(p) => p.iter_text(),
+        })
     }
 
     pub fn iter_text_mut(&mut self) -> impl Iterator<Item = &mut Cow<'a, str>> {
-        self.content
-            .iter_mut()
-            .filter_map(|content| match content {
-                TableCellContent::Paragraph(p) => Some(p.iter_text_mut()),
-            })
-            .flatten()
+        self.content.iter_mut().flat_map(|content| match content {
+            TableCellContent::Paragraph(p) => p.iter_text_mut(),
+        })
     }
 
     pub fn replace_text<'b, I, T, S>(&mut self, dic: T) -> crate::DocxResult<()>

@@ -7,7 +7,7 @@ use super::latent_style::LatentStyle;
 /// Styles are predefined sets of properties which can be applied to text.
 ///
 /// ```rust
-/// use docx_rust::styles::*;
+/// use rs_docx::styles::*;
 ///
 /// let style = Styles::new()
 ///     .default(DefaultStyle::default())

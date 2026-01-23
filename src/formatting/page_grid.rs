@@ -5,7 +5,7 @@ use crate::__string_enum;
 /// Numbering Id
 ///
 /// ```rust
-/// use docx_rust::formatting::*;
+/// use rs_docx::formatting::*;
 ///
 /// let id = NumberingId::from(42isize);
 /// ```

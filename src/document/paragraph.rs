@@ -17,8 +17,8 @@ use crate::{
 /// Paragraph is the main block-level container for content.
 ///
 /// ```rust
-/// use docx_rust::document::*;
-/// use docx_rust::formatting::*;
+/// use rs_docx::document::*;
+/// use rs_docx::formatting::*;
 ///
 /// let par = Paragraph::default()
 ///     .property(ParagraphProperty::default())
@@ -119,11 +119,8 @@ impl<'a> Paragraph<'a> {
         I: Borrow<(S, S)>,
     {
         for content in self.content.iter_mut() {
-            match content {
-                ParagraphContent::Run(r) => {
-                    r.replace_text(dic)?;
-                }
-                _ => {}
+            if let ParagraphContent::Run(r) = content {
+                r.replace_text(dic)?;
             }
         }
 
@@ -134,6 +131,7 @@ impl<'a> Paragraph<'a> {
 /// A set of elements that can be contained as the content of a paragraph.
 #[derive(Debug, From, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
+#[allow(clippy::large_enum_variant)]
 pub enum ParagraphContent<'a> {
     #[xml(tag = "w:commentRangeStart")]
     CommentRangeStart(CommentRangeStart<'a>),

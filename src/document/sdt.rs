@@ -10,8 +10,8 @@ use super::BodyContent;
 /// SDT
 ///
 // /// ```rust
-// /// use docx_rust::document::*;
-// /// use docx_rust::formatting::*;
+// /// use rs_docx::document::*;
+// /// use rs_docx::formatting::*;
 // ///
 // /// let tbl = SDT::default()
 // ///     .property(SDTProperty::default())

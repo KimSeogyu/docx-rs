@@ -8,7 +8,7 @@ use crate::__xml_test_suites;
 /// percent to one character.
 ///
 /// ```rust
-/// use docx_rust::formatting::*;
+/// use rs_docx::formatting::*;
 ///
 /// let sz = Size::from(42isize);
 /// ```

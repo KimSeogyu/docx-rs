@@ -143,10 +143,7 @@ impl From<&str> for TargetMode {
 
 impl TargetMode {
     fn from_str(option_str: Option<&str>) -> Option<Self> {
-        match option_str {
-            Some(s) => Some(s.into()),
-            None => None,
-        }
+        option_str.map(|s| s.into())
     }
 }
 

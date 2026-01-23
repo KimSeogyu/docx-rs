@@ -26,8 +26,8 @@ use super::{
 /// Run is a non-block region of text with properties.
 ///
 /// ```rust
-/// use docx_rust::document::*;
-/// use docx_rust::formatting::*;
+/// use rs_docx::document::*;
+/// use rs_docx::formatting::*;
 ///
 /// let run = Run::default()
 ///     .property(CharacterProperty::default())
@@ -161,15 +161,12 @@ impl<'a> Run<'a> {
         I: Borrow<(S, S)>,
     {
         for c in self.content.iter_mut() {
-            match c {
-                RunContent::Text(t) => {
-                    let mut tc = t.text.to_string();
-                    for p in dic {
-                        tc = tc.replace(p.borrow().0.as_ref(), p.borrow().1.as_ref());
-                    }
-                    t.text = tc.into();
+            if let RunContent::Text(t) = c {
+                let mut tc = t.text.to_string();
+                for p in dic {
+                    tc = tc.replace(p.borrow().0.as_ref(), p.borrow().1.as_ref());
                 }
-                _ => {}
+                t.text = tc.into();
             }
         }
 
@@ -180,6 +177,7 @@ impl<'a> Run<'a> {
 /// A set of elements that can be contained as the content of a run.
 #[derive(Debug, From, XmlRead, XmlWrite, Clone)]
 #[cfg_attr(test, derive(PartialEq))]
+#[allow(clippy::large_enum_variant)]
 pub enum RunContent<'a> {
     #[xml(tag = "w:br")]
     Break(Break),

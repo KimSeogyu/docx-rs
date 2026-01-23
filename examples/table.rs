@@ -1,4 +1,4 @@
-use docx_rust::{
+use rs_docx::{
     document::{Paragraph, Table, TableCell, TableRow},
     formatting::{TableCellProperty, TableProperty, TableRowProperty},
     Docx, DocxResult,

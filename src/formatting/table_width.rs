@@ -5,7 +5,7 @@ use crate::{__string_enum, __xml_test_suites};
 /// Table Width
 ///
 /// ```rust
-/// use docx_rust::formatting::*;
+/// use rs_docx::formatting::*;
 ///
 /// let width = TableWidth::from(42isize);
 /// let width = TableWidth::from(TableWidthUnit::Pct);

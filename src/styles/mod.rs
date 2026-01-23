@@ -24,7 +24,7 @@ use crate::{__xml_test_suites, write_attr};
 /// Styles are predefined sets of properties which can be applied to text.
 ///
 /// ```rust
-/// use docx_rust::styles::*;
+/// use rs_docx::styles::*;
 ///
 /// let style = Styles::new()
 ///     .default(DefaultStyle::default())

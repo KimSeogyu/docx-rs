@@ -8,8 +8,8 @@
 //! [`Docx::write_file`]: struct.Docx.html#method.write_file
 //!
 //! ```no_run
-//! use docx_rust::document::Paragraph;
-//! use docx_rust::Docx;
+//! use rs_docx::document::Paragraph;
+//! use rs_docx::Docx;
 //!
 //! let mut docx = Docx::default();
 //!
@@ -33,8 +33,8 @@
 //! [`DocxFile::parse`]: struct.DocxFile.html#method.parse
 //!
 //! ```no_run
-//! use docx_rust::document::Paragraph;
-//! use docx_rust::DocxFile;
+//! use rs_docx::document::Paragraph;
+//! use rs_docx::DocxFile;
 //!
 //! let docx = DocxFile::from_file("origin.docx").unwrap();
 //! let mut docx = docx.parse().unwrap();
@@ -50,7 +50,7 @@
 //! `DocxFile` lives as long as its returned `Docx`:
 //!
 //! ```compile_fail
-//! use docx_rust::DocxFile;
+//! use rs_docx::DocxFile;
 //!
 //! let mut docx_option = None;
 //! {

@@ -8,7 +8,7 @@ use crate::{__string_enum, __xml_test_suites};
 /// Specifies the color to be used to display text.
 ///
 /// ```rust
-/// use docx_rust::formatting::Color;
+/// use rs_docx::formatting::Color;
 ///
 /// let color = Color::from("000000");
 /// let color = Color::from(String::from("000000"));

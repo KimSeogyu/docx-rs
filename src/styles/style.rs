@@ -14,8 +14,8 @@ use crate::styles::priority::Priority;
 /// A style that applied to a region of the document.
 ///
 /// ```rust
-/// use docx_rust::formatting::*;
-/// use docx_rust::styles::*;
+/// use rs_docx::formatting::*;
+/// use rs_docx::styles::*;
 ///
 /// let style = Style::new(StyleType::Paragraph, "style_id")
 ///     .name("Style Name")

@@ -3,7 +3,7 @@ use hard_xml::{XmlRead, XmlWrite};
 /// WidowControl
 ///
 /// ```rust
-/// use docx_rust::formatting::*;
+/// use rs_docx::formatting::*;
 ///
 /// let WidowControl = WidowControl::from(false);
 /// let WidowControl = WidowControl::from(true);
