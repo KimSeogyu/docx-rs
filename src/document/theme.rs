@@ -321,8 +321,8 @@ pub struct SrgbClr {
 #[cfg_attr(test, derive(PartialEq))]
 #[xml(tag = "a:alpha")]
 pub struct Alpha {
-    #[xml(attr = "val")]
-    pub value: usize,
+    #[xml(attr = "val", with = "crate::rounded_float")]
+    pub value: isize,
 }
 
 #[derive(Debug, Default, XmlRead, XmlWrite, Clone)]

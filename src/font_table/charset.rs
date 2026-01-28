@@ -6,11 +6,13 @@ use std::borrow::Cow;
 #[xml(tag = "w:charset")]
 pub struct Charset<'a> {
     #[xml(attr = "w:val")]
-    pub value: Cow<'a, str>,
+    pub value: Option<Cow<'a, str>>,
 }
 
 impl<'a, S: Into<Cow<'a, str>>> From<S> for Charset<'a> {
     fn from(s: S) -> Self {
-        Charset { value: s.into() }
+        Charset {
+            value: Some(s.into()),
+        }
     }
 }

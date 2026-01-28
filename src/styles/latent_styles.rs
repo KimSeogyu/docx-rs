@@ -28,8 +28,8 @@ pub struct LatentStyles<'a> {
     pub unhide_when_used: Option<bool>,
     #[xml(attr = "w:defQFormat")]
     pub format: Option<bool>,
-    #[xml(attr = "w:count")]
-    pub count: Option<usize>,
+    #[xml(attr = "w:count", with = "crate::rounded_float")]
+    pub count: Option<isize>,
     #[xml(child = "w:lsdException")]
     pub styles: Vec<LatentStyle<'a>>,
 }
@@ -37,7 +37,7 @@ pub struct LatentStyles<'a> {
 impl<'a> LatentStyles<'a> {
     pub fn push(&mut self, style: LatentStyle<'a>) -> &mut Self {
         self.styles.push(style);
-        self.count = Some(self.styles.len());
+        self.count = Some(self.styles.len() as isize);
         self
     }
 }
